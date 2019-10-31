@@ -1,35 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Food({ name, emogi }) {
-  return (
+class App extends React.Component { //extends from Component
+  state = {
+    count: 0
+  }; // 내가 바꿀데이터를 state안에 넣는다.
+  add = () => {
+    console.log("add");
+  };
+  minus = () => {
+    console.log("minus");
+  };
+  render(){
+    return (
     <div>
-      <h1>i like {name}</h1>
-      <div>{emogi}</div>
+      <h1>The number is: {this.state.count}</h1>
+      <button onClick={this.add}>Add</button>
+      <button onClick={this.minus}>Minus</button>
     </div>
-  )
-}
-
-const foodILike = [
-  {
-    name: "pizza",
-    emogi: "🍕🍕🍕"
-  },
-  {
-    name: "burger",
-    emogi: "🍔🍔🍔"
-  },
-  {
-    name: "cheese",
-    emogi: "🧀🧀🧀"
+    );
   }
-];
-function App() {
-  return (
-    <div>
-      {foodILike.map(dish => <Food name={dish.name} emogi={dish.emogi} />
-      )}
-    </div>
-  );
 }
+
 
 export default App;
