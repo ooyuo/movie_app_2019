@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-function Movie({id, year, title, summary, poster}) { // 만약 componen가 state가 필요없을 경우는 class componenet가 될 필요는 없다. 그래서 일반 function을 써줌
+function Movie({id, year, title, summary, poster}) { // 만약 component가 state가 필요없을 경우는 class componenet가 될 필요는 없다. 그래서 일반 function을 써줌
     return <h5>{title}</h5>
 }
 
+// component type checking
 Movie.propTypes = {
     id: PropTypes.number.isRequired,
     year: PropTypes.number.isRequired,

@@ -2,6 +2,13 @@ import React from 'react';
 import axios from "axios";
 import Movie from "./Movie";
 
+/*
+App에 들어있는 것
+1. state
+2. getMovies() - data를 가져옴
+3. componentDidMount - component가 mount됐을때 호출
+4. render() 
+*/
 class App extends React.Component { //extends from Component
   state = {
     isLoading: true, //mount되자마자 isLoading은 true
@@ -19,7 +26,7 @@ class App extends React.Component { //extends from Component
   render(){
    const { isLoading, movies } = this.state;
     return (
-      <div>
+      <div> 
         {isLoading 
           ? "Loading..." 
           : movies.map(movie => (
@@ -29,8 +36,9 @@ class App extends React.Component { //extends from Component
               year={movie.year} 
               title={movie.title} 
               summary={movie.summary} 
-              poster={movie.medium_cover_image}/>
-          ))}</div>
+              poster={movie.medium_cover_image}/> // Loding이 다 됐을경우 Movie컴포넌트를 return 한다.
+          ))}
+        </div>
       )
     }
   }
