@@ -42,7 +42,7 @@ class App extends React.Component { //extends from Component
               year={movie.year} 
               title={movie.title} 
               summary={movie.summary} 
-              poster={movie.medium_cover_image}/> // Loding이 다 됐을경우 Movie컴포넌트를 return 한다.
+              poster={movie.medium_cover_image}/> // Loding이 다 됐을경우 Movie컴포넌트를 return
             ))}
           </div>
         )}
