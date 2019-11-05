@@ -24,22 +24,31 @@ class App extends React.Component { //extends from Component
   그리고 api로부터 fetch가 완료되면 "we are ready"대신 
    1. movie를 render하고 2. map을 만들고 3. movie를 render하는 것 */
   render(){
+
    const { isLoading, movies } = this.state;
     return (
-      <div> 
-        {isLoading 
-          ? "Loading..." 
-          : movies.map(movie => (
-            <Movie 
+
+      <section class="container">
+        {isLoading ? (
+          <div class="loader">
+            <span class="loader__text">Loading...</span>
+          </div>
+        ) : (
+          <div class="movies">
+            {movies.map(movie=>(
+              <Movie 
               key={movie.id} 
               id={movie.id} 
               year={movie.year} 
               title={movie.title} 
               summary={movie.summary} 
               poster={movie.medium_cover_image}/> // Loding이 다 됐을경우 Movie컴포넌트를 return 한다.
-          ))}
-        </div>
-      )
-    }
+            ))}
+          </div>
+        )}
+      </section>
+
+    )
   }
+}
 export default App;
