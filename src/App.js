@@ -26,15 +26,15 @@ class App extends React.Component { //extends from Component
    1. movie를 render하고 2. map을 만들고 3. movie를 render하는 것 */
   render(){
    const { isLoading, movies } = this.state;
-   
+
     return (
-      <section class="container">
+      <section className="container">
         {isLoading ? (
-          <div class="loader">
-            <span class="loader__text">Loading...</span>
+          <div className="loader">
+            <span className="loader__text">Loading...</span>
           </div>
         ) : (
-          <div class="movies">
+          <div className="movies">
             {movies.map(movie=>(
               <Movie 
                 key={movie.id} 
@@ -43,6 +43,7 @@ class App extends React.Component { //extends from Component
                 title={movie.title} 
                 summary={movie.summary} 
                 poster={movie.medium_cover_image}
+                genres={movie.genres}
             /> // Loding이 다 됐을경우 Movie컴포넌트를 return
             ))}
           </div>
