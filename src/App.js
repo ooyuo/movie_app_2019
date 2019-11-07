@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
 
 /*
 App에 들어있는 것
@@ -24,10 +25,9 @@ class App extends React.Component { //extends from Component
   그리고 api로부터 fetch가 완료되면 "we are ready"대신 
    1. movie를 render하고 2. map을 만들고 3. movie를 render하는 것 */
   render(){
-
    const { isLoading, movies } = this.state;
+   
     return (
-
       <section class="container">
         {isLoading ? (
           <div class="loader">
@@ -37,18 +37,19 @@ class App extends React.Component { //extends from Component
           <div class="movies">
             {movies.map(movie=>(
               <Movie 
-              key={movie.id} 
-              id={movie.id} 
-              year={movie.year} 
-              title={movie.title} 
-              summary={movie.summary} 
-              poster={movie.medium_cover_image}/> // Loding이 다 됐을경우 Movie컴포넌트를 return
+                key={movie.id} 
+                id={movie.id} 
+                year={movie.year} 
+                title={movie.title} 
+                summary={movie.summary} 
+                poster={movie.medium_cover_image}
+            /> // Loding이 다 됐을경우 Movie컴포넌트를 return
             ))}
           </div>
         )}
       </section>
 
-    )
+    );
   }
 }
 export default App;
